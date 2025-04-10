@@ -1,0 +1,231 @@
+/* Reset and base */
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #2C5364;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Layout */
+.main-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    max-width: 1500px;
+    width: 100%;
+    background-color:#bfced4;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 15px 25px rgba(229, 215, 215, 0.1);
+    padding: 40px;
+    animation: slideIn 1s ease;
+    flex-wrap: wrap;
+}
+
+/* Left Section */
+.left-section {
+    flex: 1;
+    min-width: 280px;
+    animation: fadeLeft 1s ease;
+}
+
+.left-section h2 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.left-section p {
+    margin-bottom: 15px;
+    color: #554646;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.image-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.image-row img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* Right Section */
+.right-section {
+    flex: 1;
+    min-width: 280px;
+    animation: fadeRight 1s ease;
+}
+
+.right-section h2 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+}
+
+form input:focus {
+    background-color: black;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background-color: #ff7e5f;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #165e3f;
+    transform: scale(1.02);
+}
+
+/* QR Section */
+.qr-section {
+    margin-top: 30px;
+    text-align: center;
+    animation: zoomIn 0.8s ease;
+}
+
+.qr-section img {
+    width: 100%;
+    max-width: 220px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.qr-section p {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.qr-section a {
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.qr-section a:hover {
+    color: #004499;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-wrapper {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+    }
+
+    .image-row {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .image-row img {
+        max-width: 120px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeLeft {
+    from {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeRight {
+    from {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
