@@ -23,7 +23,7 @@ def init_db():
 
 init_db()
 
-YOUR_UPI_ID = "shaivalya11@oksbi"
+YOUR_UPI_ID = "yourupiid"
 
 @app.route('/', methods=['GET', 'POST'])
 def donate():
