@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Donation Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="left-section">
+            <h2>Support Our Cause</h2>
+            <p>
+                We are a youth-led initiative committed to bringing education and healthcare access to underprivileged children in rural areas.
+            </p>
+            <p>
+                Your donation helps us buy books, provide learning materials, fund medical camps, and create opportunities where none exist.
+            </p>
+            <p>
+                Stand with us to make a difference—one child, one village at a time.
+            </p>
+            <p><strong>Every rupee counts.</strong></p>
+            <div class="image-row">
+                <img src="{{ url_for('static', filename='edu.jpg') }}" alt="Education">
+                <img src="{{ url_for('static', filename='health.jpg') }}" alt="Health">
+            </div>
+            
+        </div>
+        
+
+        <div class="right-section">
+            <h2>Donate Now</h2>
+            <form method="POST">
+                <label>Name:</label><br>
+                <input type="text" name="name" required><br><br>
+
+                <label>Email:</label><br>
+                <input type="email" name="email" required><br><br>
+
+                <label>Amount (₹):</label><br>
+                <input type="number" name="amount" required><br><br>
+
+                <button type="submit">Generate UPI QR</button>
+            </form>
+            {% if qr_path %}
+    <div class="qr-section">
+        <img src="{{ url_for('static', filename=qr_path) }}" alt="UPI QR Code">
+        <p>Scan to Contribute</p>
+    </div>
+{% endif %}
+
+           
+        </div>
+    </div>
+</body>
+</html>
+
+
